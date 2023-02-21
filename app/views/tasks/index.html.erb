@@ -1,0 +1,14 @@
+<h1>Coucou</h1>
+    <ul class= "container">
+  <% @tasks.each do |task| %>
+   <li><%= link_to task.title, task_path(task.id) %></li>
+   <%= link_to "DELETE",
+  task_path(task.id),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+    <%= link_to 'UPDATE', edit_tasks_path(task.id) %>
+      <br>
+  <% end %>
+    </ul>
+
+<%= link_to 'CREATE', new_task_path %>

@@ -1,0 +1,14 @@
+<h1>Coucou</h1>
+<ul>
+  <li><h1><%= @task.title %></h1></li>
+  <li><%= @task.details %></li>
+  <li><%= @task.completed %></li>
+  <br>
+</ul>
+
+<%= link_to 'HOME', root_path %>
+<%= link_to 'UPDATE', edit_tasks_path(@task.id) %>
+<%= link_to "DELETE",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
